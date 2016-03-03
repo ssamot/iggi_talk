@@ -54,7 +54,7 @@
 
 * Modern tools actually invented in \emph{John von Neumann, 1944} or possibly \emph{1928}
 * Backwards Induction
-* You must have heard it as "MinMax" - again, no real computers at the time
+* You must have heard it as "min-max" - again, no real computers at the time
 * Poker and bluffing are discussed as well
 
 \column{.5\textwidth}
@@ -72,8 +72,8 @@
 
 * Most modern additions to min-max pioneered by \emph{Alan Turing, 1953} 
 * Learning, look-aheads, evaluation functions
-* Almost every modern method was at least imagined
-* But machines still not capable of beating men 
+* Almost every modern method was at least conceptualised by Turing
+* No fast computers at the time
 
 \column{.5\textwidth}
 
@@ -86,107 +86,194 @@
 
 * From this point onwards, there was a race
 * Fundamentally asking the question
-* "Can we use computers to actually do what was conceptualised in theory"
-    * i.e., can we create (at least) human competitive machines
+    * "Can we use computers to actually do what was conceptualised in theory"
+    * i.e., can we create super-human machines?
         * Chess - \emph{IBM Deep Blue, 1996}
         * Head's Up Holdem (Poker) \emph{University of Alberta, 2015}
         * Go \emph{Deep Mind, soon} - apparently Japanese competitor? 
-* 50-60 years
+* 50-60 years between theoretical breakthroughs and actual implementations
 
 
 ## Where did all this research get us? 
 
 * Most classic games will be/are solved
 * But what does it mean for Artificial Intelligence?
-    * Narrow approaches for building narrow Systems
+    * Narrow approaches for building narrow systems
           * Chess
     * General approaches for building narrow systems
           * Backgammon, Poker, \emph{Maybe} GO 
     * \emph{ narrow approaches for building general systems}
           * Nothing
-# Current state of the art
+
+
+# Narrow Competitions
 
 ## Enter competitions
 * Implicitly one can think of these "races to the top" as competitions
-* In the case of go you even had 
 * Competitions are the most anti-intellectual thing you can do
     * Adoloscent/childish idea of "I can run faster than you"
       * When it comes to algorithms, it's mostly "My dad is stronger than your dad"
-* But there must be some value, somewhere
-* In fact, the most common sci-fi game design must be "war of resources"
-* But you need some way to measure progress!!!
+* But there is value
+* You need some way to measure progress
+    * The debate about which algorithm has better qualities can go on forever
+    * At least we have some measurement of quality
 
 
-# Competitions
+## Some modern video game AI competitions
 
-## Some modern AI competitions
+* Pacman
+    * \url{https://www.youtube.com/watch?v=Zo0YujjX1PI}
+* Tron (two-player!)
+    * \url{https://www.youtube.com/watch?v=Jyys22xoWDI}
+* Simulated Car Racing
+    * \url{https://www.youtube.com/watch?v=aZqswgdsNic}
+* Mario AI  
+    * \url{https://www.youtube.com/watch?v=DlkMs4ZHHr8}
+
+## Some modern AI competitions (Narrow AI)
 
 \includegraphics[width = 1.0\textwidth]{figures/narrow.png}
-
-## Some videos
  
 ## Too narrow
 
-* Some people have plenty of time
+* You need to develop one agent for each game
+* Each agent would have its own model, heuristics etc
+* The methods involved in agent creation can be a "dump" of the programmer's expertise
+* Hence the "Narrow methods for narrow systems"
+* Some competitors go in with general methods, but it's up to them
 
 
-# Current state of the (game) AI art
+## State of the art in game AI
 
-## State of the Art in Game AI
+* Some form of lookahead (MCTS, A*) 
+* Coupled with premature stopping (a value function)
+* Some ability to do fast, guided lookaheads (a pre-learned policy)
+* System seeded from real human plays
+* Heavy use of Reinforcement Learning, Machine Learning (e.g., Neural Networks)
 
-
-* Some form of lookahead (MCTS) 
-* Coupled with premature stopping (A value function)
-* Some ability to do fast lookaheads (A policy)
-* System seeded from Games
+# General Competitions
 
 
 ## General Game Playing
 
-## General Video Game Playing Competition (I)
+* As a response to this perceived "narroness", the general game competition was born
+    * \url{http://games.stanford.edu/}, 2005
+* There is a coursera course about this:
+    * \url{https://www.coursera.org/course/ggp} 
+* Two-player board-like games where agents get to compete against each other
+* Agents don't know the games a-priori
+* But they are given the \emph{model} at the beginning of each game
 
-\includegraphics[width = 1.0\textwidth]{figures/general.png}
+## General Video Game Playing Competition (I)
+* But how about video games? 
+* The general video game competition (GVG-AI)
+* Lunched some years ago
+    * \url{http://gvgai.net/}
+* Let's see some videos: 
+    * \url{https://www.youtube.com/watch?v=AMsk28dXA3A&list=PLe89c3ir1UJcgr04LxvD09UVR93GIXMws}
+
 
 ## General Video Game Playing Competition (II)
 
-## The problem with the Model
+\includegraphics[width = 1.0\textwidth]{figures/general.png}
 
-## Characteristics of a good competition
-* Competitions can be thought of as a formalisation of "Games as Benchmarks"
-  * A good looking website
-  * Instant gratification
-      * A "competition slave"
-        * Only real requirement!
+## General Video Game Playing Competition (III)
 
-## What about generation? 
+* Agents are given a model!
+* 3 Game Sets, 10 games each, 5 levels per game
+* Training Set: 10 games distributed with the framework
+* Validation Set: 10 games, unknown to the participants
+* Test Set: 10 games, unknown, and only executed in once
 
-* Some people actually care about the games themselves
+
+## General Video Game Playing Competition (IV)
+
+* GVGAI 2014 Competition:
+    * 23 entries
+    * Winner: Adrien Couetoux (51.2%; OLETS) [Perez et al., 2015]
+
+* GVGAI 2015 Competition:
+    * ACM GECCO 2015 (July 2015)
+        * 60 entries
+        * Winner: YOLOBOT (63.8%; MCTS, BFS, Sprite Targeting Heuristic)
+    * IEEE CIG 2015 (August 2015)
+        * 77 entries
+        * Winner: Return42 (35.8%; GA with heuristic, random walks, A*)
+    * IEEE CEEC 2015 (September 2015)
+        * 77 entries
+        * Winner YBCriber (39.2%; Iterative Widening, Danger Avoidance)
+    * 2015 GVGAI Winner: YOLOBOT (45.8% victories)
+
+## The problem with the model
+
+* I don't think having a model is "general"
+* Better than one-game competitions of course
+    * But both GG competitions use a model
+* Atari 2600 games (no formal competition) does not provide a model
+    * Used by Google as a benchmark 
+
+\includegraphics[width = 1.0\textwidth]{figures/atari.png}
+
+
+
+
+## Upcoming additions 
+
 * Procedural content generation
-* Turing competitions
+    * "Can I create games that humans would like, given that a human behaves a bit like X agent"
+    * ...or just generate something that looks good to humans
+* New track for GVG-AI soonish!
+* To be joined with a track for two-player games
+    * Two player games are super-addictive to competitors
+    * A bit harder to setup, Elo scores etc. 
+    * Most games are two player games anyway
+
+* A new "learning" track for GVG-AI 
+    * Later this year
+    * Agents will be given training time and three levels to lean on
+    * Testing will be on two different levels per game
+
 
 ## What about believable characters
 
-* Some people care about this too!
-* Insane!
-
-
-## Text
-* My interest in in Role Playing Games
-* ...or text adventures
-* Some new benchmarks but not competitions
+* Important for the gaming industry
+* "Turing test" like competitions
+    * Unreal Tournament  
+    * Real human playing in the game
+    * Human judges must find if opposing players are bots or humans
 
 
 # The future of competitions
 
+## Characteristics of a good competition
+* Competitions can be thought of as a formalisation of "Games as Benchmarks"
+  * Require good looking website
+  * Instant gratification
+  * A "competition slave"
+      * Also called "organiser"!
+
+
+## Text
+* Role Playing Games
+* ...or text adventure games
+* Allow agents to act on words as they are received
+* Some new benchmarks (from Facebook ) but no competitions
+* Maybe we should do more on this? 
+
 ## Where to from here? 
 
 * Need better benchmarks
-* Benchmarks that a machine can solve
-  * Without getting into the trap of "General Approaches for Narrow Systems"
-  * Models must go away
+* Current competitions only scratch the surface of creating generally intelligent agents
+* Benchmarks that a machine must solve
+    * \emph{Without getting into the trap of "General approaches for narrow systems"}
+    * Not sure how we can do this for the moment
+    * Problems with learning systems (e.g. catastrophic forgetting, transfer learning)
 
 
 ## Thank you!
+
+* Some of the images from Diego Perez, Julian Togelius 
+* Some of the ideas about 
 
 
 

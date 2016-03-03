@@ -35,10 +35,10 @@
 
 
 * First important result by \emph{Ernst Zermelo, 1913}
-* Use the game of Chess as an abstraction 
+* Uses the game of chess as an abstraction 
 * Kickstarts game theory - of course no real computers
 * "Given that a player (say White) is in `a winning position', how long does it take for White to force a win?"
-* Wikipedia cites the correct papers, has the definitions mixed-up with ... 
+* Wikipedia cites the correct papers, has the definitions are mixed-up with ... 
 
 \column{.5\textwidth}
 
@@ -72,8 +72,8 @@
 
 * Most modern additions to min-max pioneered by \emph{Alan Turing, 1953} 
 * Learning, look-aheads, evaluation functions
-* Almost every modern method was at least conceptualised by Turing
 * No fast computers at the time
+* But the potential was well understood
 
 \column{.5\textwidth}
 
@@ -106,12 +106,12 @@
           * Nothing
 
 
-# Narrow Competitions
+# Narrow competitions
 
 ## Enter competitions
 * Implicitly one can think of these "races to the top" as competitions
 * Competitions are the most anti-intellectual thing you can do
-    * Adoloscent/childish idea of "I can run faster than you"
+    * Adolescent/childish idea of "I can run faster than you"
       * When it comes to algorithms, it's mostly "My dad is stronger than your dad"
 * But there is value
 * You need some way to measure progress
@@ -129,6 +129,9 @@
     * \url{https://www.youtube.com/watch?v=aZqswgdsNic}
 * Mario AI  
     * \url{https://www.youtube.com/watch?v=DlkMs4ZHHr8}
+* Starcraft
+    * \url{https://www.youtube.com/watch?v=S7LgwN5tIng}
+* There are others....
 
 ## Some modern AI competitions (Narrow AI)
 
@@ -139,24 +142,24 @@
 * You need to develop one agent for each game
 * Each agent would have its own model, heuristics etc
 * The methods involved in agent creation can be a "dump" of the programmer's expertise
-* Hence the "Narrow methods for narrow systems"
+* Hence the "narrow methods for narrow systems"
 * Some competitors go in with general methods, but it's up to them
 
 
 ## State of the art in game AI
 
-* Some form of lookahead (MCTS, A*) 
+* Some form of short-horizon local dataset (MCTS, A*) 
 * Coupled with premature stopping (a value function)
 * Some ability to do fast, guided lookaheads (a pre-learned policy)
 * System seeded from real human plays
-* Heavy use of Reinforcement Learning, Machine Learning (e.g., Neural Networks)
+* Heavy use of reinforcement learning, machine learning (e.g., neural networks)
 
-# General Competitions
+# General competitions
 
 
 ## General Game Playing
 
-* As a response to this perceived "narroness", the general game competition was born
+* As a response to this perceived "narrowness", the general game competition was born
     * \url{http://games.stanford.edu/}, 2005
 * There is a coursera course about this:
     * \url{https://www.coursera.org/course/ggp} 
@@ -209,7 +212,7 @@
 * I don't think having a model is "general"
 * Better than one-game competitions of course
     * But both GG competitions use a model
-* Atari 2600 games (no formal competition) does not provide a model
+* Atari 2600 games (no formal competition) can be used without a model
     * Used by Google as a benchmark 
 
 \includegraphics[width = 1.0\textwidth]{figures/atari.png}
@@ -220,17 +223,16 @@
 ## Upcoming additions 
 
 * Procedural content generation
-    * "Can I create games that humans would like, given that a human behaves a bit like X agent"
-    * ...or just generate something that looks good to humans
-* New track for GVG-AI soonish!
-* To be joined with a track for two-player games
+    * "Can I create games that humans would like, given that a human behaves a bit like agent X"
+    * ...or just generate something that looks good to humans?
+    * New track for GVG-AI soonish!
+* Two-player games
     * Two player games are super-addictive to competitors
     * A bit harder to setup, Elo scores etc. 
     * Most games are two player games anyway
-
 * A new "learning" track for GVG-AI 
     * Later this year
-    * Agents will be given training time and three levels to lean on
+    * Agents will be given training time and three levels to learn on
     * Testing will be on two different levels per game
 
 
@@ -241,6 +243,7 @@
     * Unreal Tournament  
     * Real human playing in the game
     * Human judges must find if opposing players are bots or humans
+* Might also need them in order to procedurally generate 
 
 
 # The future of competitions
@@ -249,6 +252,8 @@
 * Competitions can be thought of as a formalisation of "Games as Benchmarks"
   * Require good looking website
   * Instant gratification
+      * No human in the evaluation loop
+      * Machines should be able
   * A "competition slave"
       * Also called "organiser"!
 
@@ -257,24 +262,29 @@
 * Role Playing Games
 * ...or text adventure games
 * Allow agents to act on words as they are received
-* Some new benchmarks (from Facebook ) but no competitions
+* Some new benchmarks (from Facebook) but no competitions
+    * Neural Turing Machine, Memory Networks etc
 * Maybe we should do more on this? 
 
 ## Where to from here? 
 
 * Need better benchmarks
 * Current competitions only scratch the surface of creating generally intelligent agents
-* Benchmarks that a machine must solve
+* We need competition tailored towards general systems 
     * \emph{Without getting into the trap of "General approaches for narrow systems"}
-    * Not sure how we can do this for the moment
+    * Not sure how we can do this at the moment
     * Problems with learning systems (e.g. catastrophic forgetting, transfer learning)
+    * Move to more than two agents
 
 
 ## Thank you!
 
-* Some of the images from Diego Perez, Julian Togelius 
-* Some of the ideas about 
-
+* Some of the images from Diego Perez/Julian Togelius et.al. talk
+    * \url{http://www.diego-perez.net/papers/aaai2016_gvgai.pdf}
+* Some ideas from Mile Brundage excellent blog post
+    * \url{http://www.milesbrundage.com/blog-posts/alphago-and-ai-progress}
+* Wikipedia articles on the subject could do with a bit of help, volunteers? 
+    
 
 
 

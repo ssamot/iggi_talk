@@ -187,6 +187,7 @@
 * Training Set: 10 games distributed with the framework
 * Validation Set: 10 games, unknown to the participants
 * Test Set: 10 games, unknown, and only executed in once
+* Very similar to a machine learning competition setup
 
 
 ## General Video Game Playing Competition (IV)
